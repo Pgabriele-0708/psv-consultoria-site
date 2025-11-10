@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- fontes -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<!-- fonte 2 -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<!-- link do botão do wpp -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<title>PSV Consultoria</title>
+
+<link rel="stylesheet" href="css/styless.css">
+</head>
+<body>
+<header class="site-header" id="header">
+<div class="container header-inner">
+<a href="#" class="brand">
+<img src="img/logo-branco.png" alt="PSV Consultoria" class="logo">
+</a>
+<nav class="nav" id="mainNav">
+<ul>
+<li><a href="#servicos">Serviços</a></li>
+
+<li><a href="#contato">Contato</a></li>
+</ul>
+</nav>
+<button class="nav-toggle" id="navToggle" aria-label="Abrir menu">☰</button>
+</div>
+</header>
+
+
+<main>
+<main>
+<section class="hero fade-in">
+  <div class="hero-content">
+    <p>
+      Na PSV Consultoria, oferecemos soluções personalizadas que ajudam empresas a aprimorar
+      seus processos, otimizar recursos e alcançar resultados estratégicos.
+    </p>
+    <a class="btn" href="#contato">Fale conosco</a>
+  </div>
+</section>
+
+
+  
+</main>
+
+
+
+<!-- Seção de Serviços -->
+
+<section id="servicos" class="fade-up"></section>
+<section id="servicos" class="services">
+
+
+  <!-- Card principal em destaque -->
+  <div class="card destaque">
+    <img src="img/consultoria-empre.webp" alt="Advisory">
+    <h3>Consultoria e Gestão Empresarial</h3>
+    <p>Oferecemos soluções estratégicas voltadas à melhoria da performance organizacional.<br> Nossa consultoria em gestão empresarial atua na análise de processos, estrutura administrativa, planejamento estratégico, finanças e desenvolvimento corporativo.<br> O objetivo é otimizar recursos, aumentar a eficiência operacional e apoiar a tomada de decisões assertivas, sempre de forma personalizada conforme as necessidades de cada cliente.</p>
+  </div>
+
+  <!-- Cards secundários -->
+  <div class="cards-secundarios">
+    <article class="card">
+      <img src="./img/plataforma-de-gestao-de-projetos.jpg" alt="Auditoria e Asseguração">
+      <h3>Consultoria de auditoria contábil e tributária</h3>
+      
+    </article>
+
+    <article class="card">
+      <img src="./img/estrategia-de-vendas.webp" alt="Tax">
+      <h3>Serviços de escritório e apoio administrativo</h3>
+     
+    </article>
+
+    <article class="card">
+      <img src="./img/pexels-pavel-danilyuk-8112199.jpg" alt="Private Enterprise">
+      <h3>Serviços jurídicos</h3>
+      
+    </article>
+        <article class="card">
+      <img src="./img/digitale-welt.jpg" alt="Private Enterprise">
+      <h3>Colsultoria em tecnologia da informação</h3>
+      
+    </article>
+  </div>
+</section>
+
+<!-- Seção de Contato -->
+<section id="contato" class="contato">
+  <div class="container contato-inner">
+    <h2>Entre em Contato</h2>
+    <p>Fale conosco para saber como podemos ajudar sua empresa a alcançar resultados estratégicos.</p>
+
+    <form class="contato-form" action="#" method="post">
+      <div class="form-row">
+        <input type="text" name="nome" placeholder="Seu nome" required>
+        <input type="email" name="email" placeholder="Seu e-mail" required>
+      </div>
+
+      <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
+
+      <button type="submit" class="btn">Enviar Mensagem</button>
+    </form>
+
+    <p>Fale conosco por e-mail, telefone ou WhatsApp.</p>
+
+    <div class="contato-info">
+      <div>
+        <h4><i class="fa-solid fa-envelope"></i> E-mail</h4>
+        <p>
+          <a href="mailto:paulacordeiro@psvconsultoria.com">
+            <i class="fa-regular fa-envelope"></i> paulacordeiro@psvconsultoria.com
+          </a><br>
+          <a href="mailto:vgcorderio@psvconsultoria.com">
+            <i class="fa-regular fa-envelope"></i> vgcorderio@psvconsultoria.com
+          </a>
+        </p>
+      </div>
+
+      <div>
+        <h4><i class="fa-brands fa-whatsapp"></i> WhatsApp</h4>
+        <p>
+          <a href="https://wa.me/5521969190435" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> (21) 9 6919-0435
+          </a><br>
+          <a href="https://wa.me/5521984936867" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> (21) 9 8493-6867
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Rodapé simples com o ano automático -->
+<footer>
+  <p>&copy; <span id="year"></span> PSV Consultoria. Todos os direitos reservados.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

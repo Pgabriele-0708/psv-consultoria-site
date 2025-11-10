@@ -1,0 +1,570 @@
+/* Reset simples */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; color:#1b1b1b; scroll-behavior:smooth}
+.container{max-width:1150px;margin:0 auto;padding:0 20px}
+
+
+/* Header fixo e transparente */
+.site-header{position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:rgba(11,35,64,0.6);
+    color:#fff;
+    z-index:1000;
+    transition:background 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter:blur(6px); 
+    overflow: visible; /* garante que o logo maior não seja cortado */}
+.site-header.scrolled{
+    background:#0b2340;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2)}
+
+.header-inner{display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:45px 0}
+
+.nav ul{display:flex;
+    gap:18px;
+    list-style:none}
+
+.nav a{color:#fff;
+    text-decoration:none;
+    font-weight:600;
+    position:relative}
+
+.nav a::after{content:'';
+    position:absolute;
+    bottom:-4px;left:0;
+    width:0;height:2px;background:#ffd24d;
+    transition:width 0.3s}
+
+.nav a:hover::after{width:100%}
+
+.nav-toggle{display:none;
+    background:transparent;
+    border:0;color:#fff;
+    font-size:22px}
+
+.brand {
+  position: relative;
+}
+
+.brand .logo {
+  height: 200px; /* aumenta o logo */
+  position: absolute; /* tira o logo do fluxo normal */
+  top: 50%;
+  left: -245px;
+  transform: translateY(-50%); /* centraliza verticalmente */
+}
+/* Hero */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  padding: 80px 10%;
+  box-sizing: border-box;
+  background-image: 
+    linear-gradient(rgba(11, 35, 64, 0.45), rgba(11, 35, 64, 0.55)), 
+    url("../img/Rio_de_Janeiro_-_RJ.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+/* cria o efeito de fusão no final da imagem */
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px; /* altura da fusão */
+  background: linear-gradient(
+    to bottom,
+    rgba(11, 35, 64, 0) 0%,
+    rgba(0, 5, 10, 0.616) 80%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  pointer-events: none; /* evita interferência com cliques */
+  z-index: 1;
+}
+
+
+@keyframes techGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.hero-content {
+  max-width: 600px;
+  text-align: left;
+  position: relative;
+  z-index: 2;
+}
+/* garante que o conteúdo da hero ocupe metade e fique à esquerda */
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero {
+  text-align: left; /* garante alinhamento à esquerda do texto */
+}
+
+.hero p {
+  font-size: 30px;
+  line-height: 1.4;
+  color: #ffffff;
+  opacity: 0.95;
+  margin-bottom: 25px;
+  text-align: justify;
+  text-indent: 35px;
+  font-family: "Roboto Condensed", sans-serif;
+
+  /* efeitos visuais */
+  text-shadow: 0 0 15px rgba(255, 211, 77, 0.541), 0 0 25px rgba(255, 255, 255, 0.15);
+  letter-spacing: 0.5px;
+  background: linear-gradient(90deg, #fff, #ffffff, #fff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  /* animação de brilho suave */
+  animation: shineText 6s ease-in-out infinite alternate,
+             fadeInUp 1.5s ease forwards;
+  opacity: 0;
+}
+
+/* brilho animado */
+@keyframes shineText {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
+}
+
+/* entrada suave do texto */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.btn {
+  display: inline-block;
+  padding: 15px 15px;
+  border-radius: 8px;
+  background: #ffd24d;
+  color: #0b2340;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background: #ffda66;
+}
+
+
+/* Seções */
+section {
+  position: relative;
+  z-index: 2;
+  background-color: #fff; /* cor do fundo padrão */
+}
+/* Efeito no topo da próxima seção, simulando que surge debaixo da imagem */
+section::before {
+  content: "";
+  position: absolute;
+  top: -50px; /* sobrepõe levemente a hero */
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(11, 35, 64, 0.3) 100%
+  );
+  filter: blur(8px);
+  pointer-events: none;
+  z-index: 1;
+}
+/* Efeito inicial (antes de aparecer) */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Quando o elemento entra na tela */
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.services .cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-top:20px}
+
+.card{background:#fff;
+    padding:20px;
+    border-radius:8px;
+    box-shadow:0 6px 18px rgba(10,10,10,0.06);
+    transition:transform 0.3s ease, box-shadow 0.3s ease}
+
+    
+    
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 10px 20px rgba(0,0,0,0.1)}
+
+.about p{
+    max-width:900px}
+    
+
+.team-grid{
+    display:flex;
+    gap:18px;
+    margin-top:18px}
+
+.member{
+    text-align:center;
+    transition:transform 0.3s}
+
+.member:hover{
+    transform:translateY(-5px)}
+
+.member img{
+    border-radius:8px;
+    width:100%;max-width:180px}
+
+.contact-form{
+    max-width:720px;
+    margin-top:18px}
+
+.field-row{
+    display:flex;
+    gap:12px}
+
+input,textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #d7d7d7;
+    border-radius:6px}
+
+input:focus,textarea:focus{
+    outline:none;border-color:#ffd24d;
+    box-shadow:0 0 4px rgba(255,210,77,0.5)}
+
+.site-footer{
+    background:#072033;
+    color:#fff;padding:18px 0;
+    text-align:center}
+
+
+
+
+/* Responsivo */
+@media (max-width:900px){
+.hero-inner{grid-template-columns:1fr}
+.nav ul{display:none}
+.nav-toggle{display:block}
+.services .cards{grid-template-columns:1fr}
+.team-grid{flex-direction:column;align-items:center}
+}
+.nav.open ul{display:flex;flex-direction:column;gap:12px;background:rgba(11,35,64,0.95);position:absolute;right:20px;top:66px;padding:12px;border-radius:8px}
+
+
+
+/* Seção geral */
+.services {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: #f9f9f9;
+}
+
+.services h2 {
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+  color: #003366;
+  font-weight: 700;
+  
+  
+}
+
+/* Card geral */
+.card {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.705);
+  padding: 25px;
+  transition: all 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card h3 {
+  margin-top: 15px;
+  color: #003366;
+  font-size: 1.7rem;
+}
+
+.card p {
+  margin-top: 10px;
+  font-size: 17px;
+  color: #555;
+  font-family: "Roboto Condensed", sans-serif;
+  line-height: 1.9;
+  
+  
+  
+}
+
+/* Destaque principal */
+.card.destaque {
+  max-width: 1000px;
+  margin: 0 auto 50px;
+  background-color: #031f3a;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.863);
+  transform: scale(1.02);
+}
+
+.card.destaque h3 {
+  color: #fff;
+}
+
+.card.destaque p {
+  color: #eaeaea;
+}
+
+/* Cards secundários */
+.cards-secundarios {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.cards-secundarios .card {
+  width: 280px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.15);
+}
+
+/* ========================
+   SEÇÃO DE CONTATO (SEM JS)
+======================== */
+.contato {
+  padding: 100px 25px;
+  background: linear-gradient(to bottom, #f9f9f9 0%, #fff 100%);
+  text-align: center;
+}
+
+.contato h2 {
+  font-size: 2.3rem;
+  color: #0b2340;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.contato p {
+  color: #333;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  font-size: 1.1rem;
+}
+
+/* Formulário */
+.contato-form {
+  max-width: 800px;
+  margin: 0 auto 80px;
+  text-align: left;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.contato-form input,
+.contato-form textarea {
+  width: 100%;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.contato-form input:focus,
+.contato-form textarea:focus {
+  border-color: #ffd24d;
+  box-shadow: 0 0 8px rgba(255, 210, 77, 0.4);
+  outline: none;
+}
+
+.contato-form .btn {
+  display: block;
+  margin: 25px auto 0;
+  background-color: #ffd24d;
+  color: #0b2340;
+  font-weight: 700;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contato-form .btn:hover {
+  background-color: #ffdb66;
+  transform: scale(1.05);
+}
+
+/* Informações de contato */
+.contato-info {
+  display: flex;
+  justify-content: center;
+  gap: 65px;
+  flex-wrap: wrap;
+}
+
+.contato-info div {
+  text-align: center;
+}
+
+.contato-info h4 {
+  color: #0b2340;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.contato-info p {
+  color: #444;
+  font-size: 1rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .contato-info {
+    flex-direction: column;
+    gap: 25px;
+  }
+}
+.contato-info i {
+  margin-right: 8px;
+  color: #25D366;
+  font-size: 1.2rem;
+  vertical-align: middle;
+}
+
+.contato-info h4 i {
+  color: #003366;
+}
+
+.contato-info a i {
+  color: #25D366;
+  transition: color 0.3s;
+}
+
+.contato-info a:hover i {
+  color: #128C7E;
+}
+/* Feedback de envio (spinner) */
+.feedback-envio {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background: rgba(11, 35, 64, 0.9);
+  color: white;
+  padding: 30px 40px;
+  border-radius: 12px;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 10000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.feedback-envio.mostrar {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.feedback-envio p {
+  margin-top: 12px;
+  font-size: 1rem;
+}
+
+/* Spinner */
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #ffd24d;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: girar 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Alerta de sucesso */
+.alerta-sucesso {
+  position: fixed;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100px);
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: all 0.4s ease;
+  z-index: 9999;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.alerta-sucesso.mostrar {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+
