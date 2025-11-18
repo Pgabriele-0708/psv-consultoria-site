@@ -88,7 +88,8 @@ form.addEventListener('submit', function (event) {
                 `Mensagem:%0A${mensagem}`;
 
   // 👉 Número principal da empresa (coloque o que preferir)
-  const numeroWhatsApp = "5521969190435"; // formato: 55 + DDD + número (sem espaços)
+  const numeroWhatsApp = "5521984936867"; // formato: 55 + DDD + número (sem espaços)
+  
   const link = `https://wa.me/${numeroWhatsApp}?text=${texto}`;
 
   // Abre o WhatsApp em nova aba

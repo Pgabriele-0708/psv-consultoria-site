@@ -22,7 +22,7 @@ html,body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helv
 .header-inner{display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:45px 0}
+    padding:30px 0}
 
 .nav ul{display:flex;
     gap:18px;
@@ -30,7 +30,7 @@ html,body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helv
 
 .nav a{color:#fff;
     text-decoration:none;
-    font-weight:600;
+    font-weight:500;
     position:relative}
 
 .nav a::after{content:'';
@@ -51,10 +51,10 @@ html,body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helv
 }
 
 .brand .logo {
-  height: 200px; /* aumenta o logo */
+  height: 150px; /* aumenta o logo */
   position: absolute; /* tira o logo do fluxo normal */
   top: 50%;
-  left: -245px;
+  left: -100px;
   transform: translateY(-50%); /* centraliza verticalmente */
 }
 /* Hero */
